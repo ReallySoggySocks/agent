@@ -34,7 +34,7 @@ schema_get_file_content = types.FunctionDeclaration(
     parameters=types.Schema(
         type=types.Type.OBJECT,
         properties={
-            "file": types.Schema(
+            "file_path": types.Schema(
                 type = types.Type.STRING,
                 description="The file to read from, relative to the working directory, truncated at 10000 characters"
             )
@@ -48,7 +48,7 @@ schema_run_python_file = types.FunctionDeclaration(
     parameters=types.Schema(
         type=types.Type.OBJECT,
         properties={
-            "file": types.Schema(
+            "file_path": types.Schema(
                 type = types.Type.STRING,
                 description="The file to execute, relative to the working directory"
             )
@@ -62,9 +62,13 @@ schema_write_file = types.FunctionDeclaration(
     parameters=types.Schema(
         type=types.Type.OBJECT,
         properties={
-            "file": types.Schema(
+            "file_path": types.Schema(
                 type = types.Type.STRING,
                 description="The file to write to, relative to the working directory, truncated at 10000 characters. If no file exists, creates the file and writes the content onto it"
+            ),
+            "content": types.Schema(
+                type = types.Type.STRING,
+                description="The content to write in the file"
             )
         }
     )

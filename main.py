@@ -24,7 +24,7 @@ def main():
         config=types.GenerateContentConfig(tools=[available_functions], system_instruction=SYSTEM_PROMPT)
         )
 
-        if len(response.function_calls) != 0:
+        if response.function_calls != None:
             for function in response.function_calls:
                 print(f"Calling Function: {function.name}({function.args})")
 
