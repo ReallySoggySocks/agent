@@ -23,8 +23,9 @@ class TestGetFiles(unittest.TestCase):
 
     def testlorem(self):
         print(run_python_file("calculator", "main.py"))
-        print(run_python_file("calculator", "pkg/morelorem.txt", "lorem ipsum dolor sit amet"))
-        print(run_python_file("calculator", "/tmp/temp.txt", "this shouldn't be allowed"))
+        print(run_python_file("calculator", "tests.py"))
+        print(run_python_file("calculator", "../main.py"))
+        print(run_python_file("calculator", "nonexistent.py"))
 
 if __name__ == "__main__":
     unittest.main()
